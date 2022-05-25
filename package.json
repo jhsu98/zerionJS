@@ -1,5 +1,5 @@
 {
-  "name": "zerionjs",
+  "name": "zerion-js",
   "version": "1.0.0",
   "description": "API wrapper for Zerion Software",
   "main": "index.js",
