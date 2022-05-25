@@ -1,0 +1,27 @@
+{
+  "name": "zerionjs",
+  "version": "1.0.0",
+  "description": "API wrapper for Zerion Software",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage --runInBand"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhsu98/zerion-js.git"
+  },
+  "author": "Jonathan Hsu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jhsu98/zerion-js/issues"
+  },
+  "homepage": "https://github.com/jhsu98/zerion-js#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.1",
+    "jest": "^28.1.0"
+  }
+}
