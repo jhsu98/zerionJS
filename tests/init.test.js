@@ -13,7 +13,7 @@ describe("Unsuccessful new IFB()", () => {
         let isFailed = false;
 
         try {
-            const api = new IFB(null, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+            const api = new IFB(null, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
             await api.init();
         } catch (err) {
             isFailed = true;
@@ -25,7 +25,7 @@ describe("Unsuccessful new IFB()", () => {
         let isFailed = false;
 
         try {
-            const api = new IFB(SERVER, null, CLIENT_SECRET, 8, REGION);
+            const api = new IFB(SERVER, REGION, null, CLIENT_SECRET, 8);
             await api.init();
         } catch (err) {
             isFailed = true;
@@ -37,7 +37,7 @@ describe("Unsuccessful new IFB()", () => {
         let isFailed = false;
 
         try {
-            const api = new IFB(SERVER, CLIENT_KEY, null, 8, REGION);
+            const api = new IFB(SERVER, REGION, CLIENT_KEY, null, 8);
             await api.init();
         } catch (err) {
             isFailed = true;
@@ -49,7 +49,7 @@ describe("Unsuccessful new IFB()", () => {
         let isFailed = false;
 
         try {
-            const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 7, REGION);
+            const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 7);
             await api.init();
         } catch (err) {
             isFailed = true;
@@ -61,7 +61,7 @@ describe("Unsuccessful new IFB()", () => {
         let isFailed = false;
 
         try {
-            const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, 'jp');
+            const api = new IFB(SERVER, 'jp', CLIENT_KEY, CLIENT_SECRET, 6);
             await api.init();
         } catch (err) {
             isFailed = true;
@@ -73,7 +73,7 @@ describe("Unsuccessful new IFB()", () => {
         let isFailed = false;
 
         try {
-            const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+            const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
             let result = await api.getProfiles();
         } catch (err) {
             isFailed = true;
@@ -91,7 +91,7 @@ describe("Successful new IFB()", () => {
         let isFailed = false;
 
         try {
-            const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+            const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
             await api.init();
         } catch (err) {
             isFailed = true;
@@ -103,7 +103,7 @@ describe("Successful new IFB()", () => {
         let isFailed = false;
 
         try {
-            const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+            const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
             await api.init();
         } catch (err) {
             isFailed = true;
@@ -115,7 +115,7 @@ describe("Successful new IFB()", () => {
         let isFailed = false;
 
         try {
-            const api = new IFB(SERVER, ZIM_CLIENT_KEY, ZIM_CLIENT_SECRET, 8, REGION);
+            const api = new IFB(SERVER, REGION, ZIM_CLIENT_KEY, ZIM_CLIENT_SECRET, 8);
             await api.init();
         } catch(err) {
             isFailed = true;
@@ -128,7 +128,7 @@ describe("Successful new IFB()", () => {
         let isFailed = false;
 
         try {
-            const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION, { simple_response: true });
+            const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6, { simple_response: true });
             await api.init();
         } catch (err) {
             isFailed = true;
@@ -140,7 +140,7 @@ describe("Successful new IFB()", () => {
         let isFailed = false;
 
         try {
-            const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION, { skip_rate_limit_retry: true });
+            const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6, { skip_rate_limit_retry: true });
             await api.init();
         } catch (err) {
             isFailed = true;
@@ -151,7 +151,7 @@ describe("Successful new IFB()", () => {
 
 describe("Class Methods", () => {
     it("Public Methods", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         expect(api.getAccessToken()).not.toEqual(null);

@@ -12,7 +12,7 @@ const RECORD_ID = process.env.RECORD_ID;
 
 describe("GET records & records/:id", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.getRecords(PROFILE_ID, PAGE_ID);
@@ -23,7 +23,7 @@ describe("GET records & records/:id", () => {
     });
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.getRecords(PROFILE_ID, PAGE_ID);
@@ -40,7 +40,7 @@ describe("GET records & records/:id", () => {
 
 describe("COPY records/:id", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.copyRecord(PROFILE_ID, PAGE_ID, RECORD_ID);
@@ -51,7 +51,7 @@ describe("COPY records/:id", () => {
     });
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.copyRecord(PROFILE_ID, PAGE_ID, RECORD_ID);
@@ -68,7 +68,7 @@ describe("COPY records/:id", () => {
 
 describe("CRUD records", () => {
     it("Version 8 with ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postRecords(
@@ -112,7 +112,7 @@ describe("CRUD records", () => {
     }, 10000);
 
     it("Version 8 with Fields", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postRecords(
@@ -161,7 +161,7 @@ describe("CRUD records", () => {
 
 describe("CRUD recordassignments", () => {
     it("Version 8 with ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postRecordAssignments(
@@ -182,7 +182,7 @@ describe("CRUD recordassignments", () => {
     }, 10000);
 
     it("Version 8 with Fields", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postRecordAssignments(

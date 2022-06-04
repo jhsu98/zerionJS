@@ -45,7 +45,7 @@ Additionally, each method is defined to accept the necessary parameters to prope
 
 Querying a specific resource by ID will generally be done by the singular noun of the resource. For example, a GET request to the /records resource with id `1` would be named `getRecord()` and the function call could look something like: `api.getRecord(12345, 67890, 1)`.
 
-Each 
+For a full list of API commands, refer to the official iForm API documentation [here](https://iformbuilder80.docs.apiary.io/)
 
 # How to Contribute
 
@@ -53,5 +53,10 @@ This library is a work in progress. As Zerion APIs are released, this library wi
 
 # Change Log
 
--   May 25, 2022 (v2.0.0)
-    -   Initial Release
+-  June 4, 2022 (v2.1.0)
+    - Changed order of paramters when initializing new instance to (server, region, client_key, client_secret, version)
+    - Added getter for `access_token`
+    - Added getter for `last_execution_time`
+    - Added method `getLastExecutionTime()`
+-  May 25, 2022 (v2.0.0)
+   - Initial Release

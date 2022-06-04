@@ -12,7 +12,7 @@ const LANGUAGE_CODE = 'es';
 
 describe("GET options & option/:id", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.getOptions(PROFILE_ID, OPTIONLIST_ID);
@@ -23,7 +23,7 @@ describe("GET options & option/:id", () => {
     });
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.getOptions(PROFILE_ID, OPTIONLIST_ID);
@@ -40,7 +40,7 @@ describe("GET options & option/:id", () => {
 
 describe("CRUD options", () => {
     it("Version 8 with ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postOptions(
@@ -75,7 +75,7 @@ describe("CRUD options", () => {
     }, 10000);
 
     it("Version 8 with Fields", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postOptions(
@@ -115,7 +115,7 @@ describe("CRUD options", () => {
 
 describe("CRUD optionlocalizations", () => {
     it("Version 8 with ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postOptionLocalizations(
@@ -148,7 +148,7 @@ describe("CRUD optionlocalizations", () => {
     }, 10000);
 
     it("Version 8 with Fields", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postOptionLocalizations(

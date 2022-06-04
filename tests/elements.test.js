@@ -14,7 +14,7 @@ const ATTRIBUTE_NAME = '12_24_hour_time';
 
 describe("GET elements & elements/:id", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.getElements(PROFILE_ID, PAGE_ID);
@@ -25,7 +25,7 @@ describe("GET elements & elements/:id", () => {
     });
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.getElements(PROFILE_ID, PAGE_ID);
@@ -42,7 +42,7 @@ describe("GET elements & elements/:id", () => {
 
 describe("COPY element", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.copyElement(PROFILE_ID, PAGE_ID, ELEMENT_ID);
@@ -53,7 +53,7 @@ describe("COPY element", () => {
     });
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.copyElement(PROFILE_ID, PAGE_ID, ELEMENT_ID);
@@ -70,7 +70,7 @@ describe("COPY element", () => {
 
 describe("CRUD elements", () => {
     it("Version 8 by ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postElements(
@@ -106,7 +106,7 @@ describe("CRUD elements", () => {
     }, 10000);
 
     it("Version 8 by Fields", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postElements(
@@ -149,7 +149,7 @@ describe("CRUD elements", () => {
 
 describe("CRUD elementlocalizations", () => {
     it("Version 8 by ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postElementLocalizations(
@@ -182,7 +182,7 @@ describe("CRUD elementlocalizations", () => {
     }, 10000);
 
     it("Version 8 by Fields", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postElementLocalizations(
@@ -223,7 +223,7 @@ describe("CRUD elementlocalizations", () => {
 
 describe("CRUD elementdynamicattributes", () => {
     it("Version 8 by ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postElementDynamicAttributes(
@@ -256,7 +256,7 @@ describe("CRUD elementdynamicattributes", () => {
     }, 10000);
 
     it("Version 8 by Fields", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postElementDynamicAttributes(

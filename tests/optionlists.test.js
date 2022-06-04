@@ -10,7 +10,7 @@ const OPTIONLIST_ID = process.env.OPTIONLIST_ID;
 
 describe("GET optionlists & optionlists/:id", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.getOptionLists(PROFILE_ID);
@@ -21,7 +21,7 @@ describe("GET optionlists & optionlists/:id", () => {
     });
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.getOptionLists(PROFILE_ID);
@@ -38,7 +38,7 @@ describe("GET optionlists & optionlists/:id", () => {
 
 describe("COPY optionlists/:id", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.copyOptionList(PROFILE_ID, OPTIONLIST_ID);
@@ -49,7 +49,7 @@ describe("COPY optionlists/:id", () => {
     });
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.copyOptionList(PROFILE_ID, OPTIONLIST_ID);
@@ -66,7 +66,7 @@ describe("COPY optionlists/:id", () => {
 
 describe("CRUD optionlists", () => {
     it("Version 8 with ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postOptionLists(

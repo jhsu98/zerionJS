@@ -11,7 +11,7 @@ const ENDPOINT_URL = process.env.ENDPOINT_URL;
 
 describe("GET endpoints & endpoint/:id", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.getPageEndpoints(PROFILE_ID, PAGE_ID);
@@ -22,7 +22,7 @@ describe("GET endpoints & endpoint/:id", () => {
     });
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.getPageEndpoints(PROFILE_ID, PAGE_ID);
@@ -39,7 +39,7 @@ describe("GET endpoints & endpoint/:id", () => {
 
 describe("CRUD endpoints", () => {
     it("Version 8 by ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postPageEndpoints(
@@ -77,7 +77,7 @@ describe("CRUD endpoints", () => {
     }, 10000);
 
     it("Version 8 by Fields", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postPageEndpoints(

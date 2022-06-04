@@ -18,7 +18,7 @@ const ATTRIBUTE_NAME = 'map_priority';
 
 describe("GET pages & pages/:id", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.getPages(PROFILE_ID);
@@ -29,7 +29,7 @@ describe("GET pages & pages/:id", () => {
     });
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.getPages(PROFILE_ID);
@@ -46,7 +46,7 @@ describe("GET pages & pages/:id", () => {
 
 describe("GET pagegroups & pagegroups/:id", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.getPageGroups(PROFILE_ID);
@@ -57,7 +57,7 @@ describe("GET pagegroups & pagegroups/:id", () => {
     });
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.getPageGroups(PROFILE_ID);
@@ -74,7 +74,7 @@ describe("GET pagegroups & pagegroups/:id", () => {
 
 describe("COPY page", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.copyPage(PROFILE_ID, PAGE_ID);
@@ -86,7 +86,7 @@ describe("COPY page", () => {
     }, 10000);
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.copyPage(PROFILE_ID, PAGE_ID);
@@ -104,7 +104,7 @@ describe("COPY page", () => {
 
 describe("CRUD pages", () => {
     it("Version 8 with ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postPages(
@@ -137,7 +137,7 @@ describe("CRUD pages", () => {
     }, 10000);
 
     // it("Version 8 with Fields", async () => {
-    //     const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+    //     const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
     //     await api.init();
 
     //     let result = await api.postPages(
@@ -175,7 +175,7 @@ describe("CRUD pages", () => {
 
 describe("CRUD pagegroups", () => {
     it("Version 8 with ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postPageGroups(
@@ -207,7 +207,7 @@ describe("CRUD pagegroups", () => {
     }, 10000);
 
     // it("Version 8 with Fields", async () => {
-    //     const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+    //     const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
     //     await api.init();
 
     //     let result = await api.postPageGroups(
@@ -244,7 +244,7 @@ describe("CRUD pagegroups", () => {
 
 describe("GET pagefeeds", () => {
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.getPageFeed(PROFILE_ID, PAGE_ID);
@@ -258,7 +258,7 @@ describe("GET pagefeeds", () => {
 
 describe("POST pagetriggerpost", () => {
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postPageTriggerPost(PROFILE_ID, PAGE_ID, [{ id: RECORD_ID }]);
@@ -272,7 +272,7 @@ describe("POST pagetriggerpost", () => {
 
 describe("CRUD pageemailalerts", () => {
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postPageEmailAlerts(PROFILE_ID, PAGE_ID_2, { email: 'test@test.com' });
@@ -292,7 +292,7 @@ describe("CRUD pageemailalerts", () => {
 
 describe("CRUD pagelocalizations", () => {
     it("Version 8 with ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postPageLocalizations(
@@ -324,7 +324,7 @@ describe("CRUD pagelocalizations", () => {
     }, 10000);
 
     it("Version 8 with Fields", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postPageLocalizations(
@@ -361,7 +361,7 @@ describe("CRUD pagelocalizations", () => {
 
 describe("CRUD pageuserassignments", () => {
     it("Version 8 with ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postPageUserAssignments(
@@ -394,7 +394,7 @@ describe("CRUD pageuserassignments", () => {
     }, 10000);
 
     it("Version 8 with Fields", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postPageUserAssignments(
@@ -433,7 +433,7 @@ describe("CRUD pageuserassignments", () => {
 
 describe("GET pagerecordassignments DELETE pagerecordassignments", () => {
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.getPageRecordAssignments(PROFILE_ID, PAGE_ID);
@@ -450,7 +450,7 @@ describe("GET pagerecordassignments DELETE pagerecordassignments", () => {
 
 describe("CRD pagegrouppageassignments", () => {
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.getPageGroupPageAssignments(PROFILE_ID, PAGEGROUP_ID);
@@ -472,7 +472,7 @@ describe("CRD pagegrouppageassignments", () => {
 
 describe("CRD pagegroupuserassignments", () => {
     it("Version 8 with ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postPageGroupUserAssignments(PROFILE_ID, PAGEGROUP_ID, { user_id: USER_ID_2, can_collect: false, can_view: false });
@@ -489,7 +489,7 @@ describe("CRD pagegroupuserassignments", () => {
     }, 10000);
 
     it("Version 8 with Fields", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postPageGroupUserAssignments(PROFILE_ID, PAGEGROUP_ID, { user_id: USER_ID_2, can_collect: false, can_view: false });
@@ -512,7 +512,7 @@ describe("CRD pagegroupuserassignments", () => {
 
 describe("CRUD pageshares", () => {
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postPageShares(
@@ -551,7 +551,7 @@ describe("CRUD pageshares", () => {
 
 describe("CRUD pagedynamicattributes", () => {
     it("Version 8 with ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postPageDynamicAttributes(
@@ -582,7 +582,7 @@ describe("CRUD pagedynamicattributes", () => {
     }, 10000);
 
     it("Version 8 with Fields", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postPageDynamicAttributes(

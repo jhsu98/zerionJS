@@ -11,7 +11,7 @@ const PRIVATE_MEDIA_URL = process.env.PRIVATE_MEDIA_URL;
 
 describe("GET privatemedia", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.getPrivateMedia(PROFILE_ID, PRIVATE_MEDIA_URL);
@@ -19,7 +19,7 @@ describe("GET privatemedia", () => {
     });
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.getPrivateMedia(PROFILE_ID, PRIVATE_MEDIA_URL);

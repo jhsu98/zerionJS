@@ -9,7 +9,7 @@ const PROFILE_ID = process.env.PROFILE_ID;
 
 describe("GET profiles & profiles/:id", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.getProfiles();
@@ -20,7 +20,7 @@ describe("GET profiles & profiles/:id", () => {
     });
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.getProfiles();
@@ -37,7 +37,7 @@ describe("GET profiles & profiles/:id", () => {
 
 describe("POST profile & PUT profiles/:id", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.postProfile({ name: `pr crud ${Math.floor(new Date().getTime())}`, email: 'test@test.com', max_user: 0, max_page: 0, is_active: true });
@@ -50,7 +50,7 @@ describe("POST profile & PUT profiles/:id", () => {
     }, 10000);
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postProfile({ name: `pr crud ${Math.floor(new Date().getTime())+3}`, email: 'test@test.com', max_user: 0, max_page: 0, is_active: true });
@@ -69,7 +69,7 @@ describe("POST profile & PUT profiles/:id", () => {
 
 describe("GET profiles/self", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.getHomeProfile();
@@ -77,7 +77,7 @@ describe("GET profiles/self", () => {
     });
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.getHomeProfile();
@@ -91,7 +91,7 @@ describe("GET profiles/self", () => {
 
 describe("GET companyinfo", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.getCompanyInfo(PROFILE_ID);
@@ -99,7 +99,7 @@ describe("GET companyinfo", () => {
     });
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.getCompanyInfo(PROFILE_ID);
@@ -113,7 +113,7 @@ describe("GET companyinfo", () => {
 
 describe("PUT companyinfo", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.putCompanyInfo(PROFILE_ID, { homemessage: `updated: ${new Date().toISOString()}` });
@@ -121,7 +121,7 @@ describe("PUT companyinfo", () => {
     });
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.putCompanyInfo(PROFILE_ID, { homemessage: `updated: ${new Date().toISOString()}` });

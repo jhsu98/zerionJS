@@ -117,7 +117,7 @@ class IFB {
         DeviceLicense: "profiles/%s/licenses/%s",
     };
 
-    constructor(server, client_key, client_secret, version, region, params = {}) {
+    constructor(server, region, client_key, client_secret, version, params = {}) {
         if (!server || !client_key || !client_secret) throw "Server, Client Key, Client Secret are required";
 
         if (!this.#ALLOWED_VERSIONS.includes(version)) throw "Invalid Version";
@@ -229,18 +229,34 @@ class IFB {
         return (this.#isSimpleResponse) ? response.response : response;
     }
 
+    get access_token() {
+        return this.#access_token;
+    }
+
+    get last_execution_time() {
+        return this.#last_execution_time;
+    }
+
     async getAccessToken() {
         return this.#access_token;
     }
+
     async getApiCount() {
         return this.#api_calls;
     }
+
+    async getLastExecutionTime() {
+        return this.#last_execution_time;
+    }
+
     async getStartTime() {
         return this.#start_time;
     }
+
     async getApiLifetime() {
         return Number((new Date().getTime() - this.#start_time).toFixed(2));
     }
+
     async getAccessTokenExpiration() {
         return this.#access_token_expiration;
     }

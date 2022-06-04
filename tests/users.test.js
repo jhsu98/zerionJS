@@ -15,7 +15,7 @@ const RECORD_ID = process.env.RECORD_ID;
 
 describe("GET users & users/:id", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER,REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.getUsers(PROFILE_ID);
@@ -26,7 +26,7 @@ describe("GET users & users/:id", () => {
     });
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.getUsers(PROFILE_ID);
@@ -43,7 +43,7 @@ describe("GET users & users/:id", () => {
 
 describe("CRUD users", () => {
     it("Version 8 with ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postUsers(
@@ -79,7 +79,7 @@ describe("CRUD users", () => {
     }, 10000);
 
     it("Version 8 with Fields", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postUsers(
@@ -119,7 +119,7 @@ describe("CRUD users", () => {
 
 describe("CRUD userpageassignments", () => {
     it("Version 8 with ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postUserPageAssignments(
@@ -155,7 +155,7 @@ describe("CRUD userpageassignments", () => {
     }, 10000);
 
     it("Version 8 with Fields", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postUserPageAssignments(
@@ -197,7 +197,7 @@ describe("CRUD userpageassignments", () => {
 
 describe("CRUD userrecordassignments", () => {
     it("Version 8 with ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postUserRecordAssignments(
@@ -221,7 +221,7 @@ describe("CRUD userrecordassignments", () => {
     }, 10000);
 
     it("Version 8 with Fields", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postUserRecordAssignments(
@@ -251,7 +251,7 @@ describe("CRUD userrecordassignments", () => {
 
 describe("GET usergroups & usergroups/:id", () => {
     it("Version 6", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 6, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 6);
         await api.init();
 
         let result = await api.getUserGroups(PROFILE_ID);
@@ -262,7 +262,7 @@ describe("GET usergroups & usergroups/:id", () => {
     });
 
     it("Version 8", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.getUserGroups(PROFILE_ID);
@@ -279,7 +279,7 @@ describe("GET usergroups & usergroups/:id", () => {
 
 describe("CRUD usergroups", () => {
     it("Version 8 with ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postUserGroups(
@@ -316,7 +316,7 @@ describe("CRUD usergroups", () => {
 
 describe("CRUD usergroups/users", () => {
     it("Version 8 with ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postUserGroupUserAssignments(
@@ -340,7 +340,7 @@ describe("CRUD usergroups/users", () => {
     }, 10000);
 
     it("Version 8 with Fields", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postUserGroupUserAssignments(
@@ -367,7 +367,7 @@ describe("CRUD usergroups/users", () => {
 
 describe("CRUD usergroups/pages", () => {
     it("Version 8 with ID", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postUserGroupPageAssignments(
@@ -402,7 +402,7 @@ describe("CRUD usergroups/pages", () => {
     }, 10000);
 
     it("Version 8 with Fields", async () => {
-        const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, 8, REGION);
+        const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, 8);
         await api.init();
 
         let result = await api.postUserGroupPageAssignments(
