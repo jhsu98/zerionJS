@@ -19,7 +19,7 @@ const IFB = require("zerionJS/ifb");
 With the module imported, create an API connection with the following two lines:
 
 ```javascript
-const api = new IFB(SERVER, CLIENT_KEY, CLIENT_SECRET, VERSION, REGION);
+const api = new IFB(SERVER, REGION, CLIENT_KEY, CLIENT_SECRET, VERSION);
 await api.init();
 ```
 
