@@ -7,7 +7,7 @@ zerionJS is an easy-to-use API wrapper for Zerion Software's iFormBuilder. The g
 To begin, install the module.
 
 ```
-npm install zerionJS
+npm install zerion-js
 ```
 
 After the module is installed, import it using the following command in your js file:
