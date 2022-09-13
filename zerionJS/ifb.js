@@ -1,6 +1,8 @@
-const jwt = require("jsonwebtoken");
+// const jwt = require("jsonwebtoken");
 const axios = require("axios");
 const util = require("util");
+const jose = require("jose");
+const { createSecretKey } = require("crypto");
 
 class IFB {
     #server;
@@ -170,7 +172,21 @@ class IFB {
             exp: Math.floor(new Date().getTime() / 1000) + 300,
         };
 
-        const token = jwt.sign(jwt_payload, this.#client_secret);
+        const secretKey = createSecretKey(this.#client_secret, 'utf-8');
+
+        const token = await new jose.SignJWT({})
+            .setProtectedHeader({ alg: 'HS256', typ: 'JWT' })
+            .setIssuedAt()
+            .setIssuer(this.#client_key)
+            .setAudience(this.#token_url)
+            .setExpirationTime('2m')
+            .sign(secretKey);
+
+        console.log(token);
+
+        // const token = jwt.sign(jwt_payload, this.#client_secret);
+        // const token = await new jose.UnsecuredJWT(jwt_payload)
+        //                 .sign(this.#client_secret);
 
         let params;
         let config;

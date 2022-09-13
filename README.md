@@ -53,10 +53,12 @@ This library is a work in progress. As Zerion APIs are released, this library wi
 
 # Change Log
 
--  June 4, 2022 (v2.1.0)
+- September 12, 2022 (v2.1.1)
+    - Removed the jsonwebtoken dependency and replaced with jose
+- June 4, 2022 (v2.1.0)
     - Changed order of paramters when initializing new instance to (server, region, client_key, client_secret, version)
     - Added getter for `access_token`
     - Added getter for `last_execution_time`
     - Added method `getLastExecutionTime()`
--  May 25, 2022 (v2.0.0)
+- May 25, 2022 (v2.0.0)
    - Initial Release

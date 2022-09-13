@@ -18,7 +18,7 @@
   "homepage": "https://github.com/jhsu98/zerion-js#readme",
   "dependencies": {
     "axios": "^0.27.2",
-    "jsonwebtoken": "^8.5.1"
+    "jose": "^4.9.2"
   },
   "devDependencies": {
     "dotenv": "^16.0.1",
