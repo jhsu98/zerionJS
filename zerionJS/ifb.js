@@ -1,4 +1,3 @@
-// const jwt = require("jsonwebtoken");
 const axios = require("axios");
 const util = require("util");
 const jose = require("jose");
@@ -181,12 +180,6 @@ class IFB {
             .setAudience(this.#token_url)
             .setExpirationTime('2m')
             .sign(secretKey);
-
-        console.log(token);
-
-        // const token = jwt.sign(jwt_payload, this.#client_secret);
-        // const token = await new jose.UnsecuredJWT(jwt_payload)
-        //                 .sign(this.#client_secret);
 
         let params;
         let config;
