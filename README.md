@@ -13,7 +13,7 @@ npm install zerion-js
 After the module is installed, import it using the following command in your js file:
 
 ```javascript
-const IFB = require("zerionJS/ifb");
+const IFB = require("zerionJS");
 ```
 
 With the module imported, create an API connection with the following two lines:
