@@ -201,7 +201,7 @@ class IFB {
         const result = await axios.post(this.#token_url, params, config).then((response) => {
             this.#access_token = response.data.access_token;
             this.#start_time = new Date();
-            this.#access_token_expiration = new Date().getTime() + 3300;
+            this.#access_token_expiration = new Date().getTime() + 3300000;
         });
     }
 
