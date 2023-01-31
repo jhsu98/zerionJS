@@ -53,6 +53,8 @@ This library is a work in progress. As Zerion APIs are released, this library wi
 
 # Change Log
 
+- January 31, 2023 (v2.1.3)
+    - Reverted to jsonwebtoken dependency
 - October 18, 2022 (v2.1.2)
     - Fixed refresh access token offset by correcting offset to be in milliseconds instead of seconds
 - September 12, 2022 (v2.1.1)
