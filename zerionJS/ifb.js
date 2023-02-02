@@ -25,7 +25,7 @@ class IFB {
     #last_execution_time;
 
     #ALLOWED_VERSIONS = [6, 8, 8.1];
-    #ALLOWED_REGIONS = ["us", "uk", "au", "hipaa", "qa"];
+    #ALLOWED_REGIONS = ["us", "uk", "au", "hipaa", "qa", "sandbox"];
 
     #resources = {
         Profiles: "profiles",
@@ -148,7 +148,7 @@ class IFB {
 
         // Overwrite the token_url if isZIM is true
         if (this.#isZIM) {
-            this.#token_url = this.#region == "qa" ? "https://qa-identity.zerionsoftware.com/oauth2/token" : "https://identity.zerionsoftware.com/oauth2/token";
+            this.#token_url = ["qa", "sandbox"].includes(this.#region) ? "https://qa-identity.zerionsoftware.com/oauth2/token" : "https://identity.zerionsoftware.com/oauth2/token";
         }
     }
 

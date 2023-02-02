@@ -53,6 +53,8 @@ This library is a work in progress. As Zerion APIs are released, this library wi
 
 # Change Log
 
+- February 1, 2023 (v2.1.4)
+    - Added support for `sandbox` region
 - January 31, 2023 (v2.1.3)
     - Reverted to jsonwebtoken dependency
 - October 18, 2022 (v2.1.2)
