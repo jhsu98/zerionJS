@@ -28,6 +28,7 @@ class IFB {
     #ALLOWED_REGIONS = ["us", "uk", "au", "hipaa", "qa", "sandbox"];
 
     #resources = {
+        Token: "token",
         Profiles: "profiles",
         Profile: "profiles/%s",
         HomeProfile: "profiles/self",
@@ -275,6 +276,13 @@ class IFB {
 
     async getAccessTokenExpiration() {
         return this.#access_token_expiration;
+    }
+
+    /************************
+     * Inspect Token Attributes
+     ***********************/
+    async getToken() {
+        return await this.#request("getToken", null, null, null);
     }
 
     /************************
