@@ -17,11 +17,14 @@
   },
   "homepage": "https://github.com/jhsu98/zerion-js#readme",
   "dependencies": {
-    "axios": "^0.27.2",
+    "axios": "^0.34.0",
     "jsonwebtoken": "^9.0.0"
   },
   "devDependencies": {
     "dotenv": "^16.0.1",
     "jest": "^28.1.0"
+  },
+  "engines": {
+    "node": "^22.23.4 || ^24.22.1 || ^26.12.1"
   }
 }
